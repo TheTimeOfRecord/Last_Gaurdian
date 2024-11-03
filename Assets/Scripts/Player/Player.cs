@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    PlayerController playerController;
-    PlayerCondition playerCondition;
+    public PlayerController playerController;
+    public PlayerCondition playerCondition;
+    public PlayerPhysics playerPhysics;
+    public PlayerHeartSensor playerHeartSensor;
     private void Awake()
     {
         PlayerManager.Instance.Player = this;
         playerController = GetComponent<PlayerController>();
         playerCondition = GetComponent<PlayerCondition>();
+        playerPhysics = GetComponent<PlayerPhysics>();
+        playerHeartSensor = GetComponentInChildren<PlayerHeartSensor>();
     }
 
 }
