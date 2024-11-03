@@ -35,11 +35,11 @@ public class PlayerMovement : MonoBehaviour
 
         SetCursor();
 
-        rigidbody.drag = PhysicsManager.Instance.physicsConfig.groundDrag;
         moveSpeed = playerStats.walkSpeed;
         lastMoveTime = Time.time;
         lastJumpTime = Time.time;
 
+        // 심장의 Water 감지 센서
         PlayerManager.Instance.Player.playerHeartSensor.onHeartWaterEvent += SetIsHeartWater;
 
         // Subscribe to input events
