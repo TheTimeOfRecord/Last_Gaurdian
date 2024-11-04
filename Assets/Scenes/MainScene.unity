@@ -39384,7 +39384,7 @@ MonoBehaviour:
   playerController: {fileID: 0}
   playerCondition: {fileID: 0}
   playerPhysics: {fileID: 0}
-  playerHeart: {fileID: 0}
+  playerHeartSensor: {fileID: 0}
 --- !u!114 &1097868047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39409,14 +39409,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ed9cf4762510a46b6b564f55252b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 11400000, guid: 8174b7aa0737d8e44a214cfa855e1401, type: 2}
+  movementStats: {fileID: 11400000, guid: 8174b7aa0737d8e44a214cfa855e1401, type: 2}
   moveDirection: {x: 0, y: 0}
   moveSpeed: 0
   canMove: 1
   isMove: 0
   isJumpPressed: 0
   canJump: 1
-  onWater: 0
+  isHeartWater: 0
   cameraContainer: {fileID: 568163171}
   playerLookConfig: {fileID: 11400000, guid: 68f662eb85893464fadd16742299d139, type: 2}
   camCurXRot: 0
