@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlayerStats", menuName = "Player/PlayerStats")]
-public class PlayerStats : ScriptableObject
+[CreateAssetMenu(fileName = "PlayerMovementStats", menuName = "Player/MovementStats")]
+public class PlayerMovementStats : ScriptableObject
 {
     [Header("Movement")]
     public ForceMode forceMode;
