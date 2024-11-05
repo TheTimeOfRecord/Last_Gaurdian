@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Resource_Rock
   m_EditorClassIdentifier: Assembly-CSharp::ResourceItem
   itemName: "\uB3CC"
-  description: 
+  description: "\uB3CC\uC744 \uBD80\uC154 \uB098\uC628 \uB3CC"
   icon: {fileID: 0}
   itemID: 301
   quantity: 0

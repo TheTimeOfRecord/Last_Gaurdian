@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acfa92ee74d75204b81648e94c9244e3, type: 3}
   m_Name: Consumable_CookedMeat
   m_EditorClassIdentifier: Assembly-CSharp::ConsumableItem
-  itemName: "\uACE0\uAE30"
-  description: 
+  itemName: "\uC775\uC740 \uACE0\uAE30"
+  description: "\uACE0\uAE30\uB294 \uB72F\uC5B4\uBA39\uB294\uAC8C \uC81C\uB9DB"
   icon: {fileID: 0}
   itemID: 105
   consumableType: 1

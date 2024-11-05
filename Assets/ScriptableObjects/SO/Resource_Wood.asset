@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Resource_Wood
   m_EditorClassIdentifier: Assembly-CSharp::ResourceItem
   itemName: "\uB098\uBB34"
-  description: 
+  description: "\uB098\uBB34\uB97C \uBCA0\uC5B4 \uB098\uC628 \uB098\uBB34"
   icon: {fileID: 0}
   itemID: 302
   quantity: 0

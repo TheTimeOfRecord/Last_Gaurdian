@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Consumable_Health
   m_EditorClassIdentifier: Assembly-CSharp::ConsumableItem
   itemName: "\uCCB4\uB825"
-  description: 
+  description: "\uBD88\uB048\uBD88\uB048"
   icon: {fileID: 0}
   itemID: 103
   consumableType: 2

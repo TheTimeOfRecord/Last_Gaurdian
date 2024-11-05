@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Resource_Meat
   m_EditorClassIdentifier: Assembly-CSharp::ResourceItem
   itemName: "\uACE0\uAE30"
-  description: 
+  description: "\uAC00\uCD95\uC744 \uC7A1\uC544 \uB098\uC628 \uACE0\uAE30"
   icon: {fileID: 0}
   itemID: 303
   quantity: 0
