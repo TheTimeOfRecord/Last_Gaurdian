@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -52,8 +52,6 @@ public class PlayerMovement : MonoBehaviour
             animationManager = gameObject.AddComponent<PlayerAnimationManager>();
         }
         animationManager.Initialize(animator);
-
-        SetCursor();
 
         moveSpeed = movementStats.walkSpeed;
         lastMoveTime = Time.time;
@@ -196,17 +194,5 @@ public class PlayerMovement : MonoBehaviour
     public void SetIsHeartWater(bool inputIsHeartWater)
     {
         isHeartWater = inputIsHeartWater;
-    }
-
-    public void SetCursor()
-    {
-        if (canLook)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
     }
 }

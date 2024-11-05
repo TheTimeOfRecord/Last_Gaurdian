@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public event Action onInteractInput;
     public event Action onAttackInput;
     public event Action onInventoryInput;
+
+    public bool canLook => PlayerManager.Instance.Player.playerMovement.canLook;
     public void OnMove(InputAction.CallbackContext context)
     {
         if(context.phase == InputActionPhase.Performed)
@@ -66,5 +68,16 @@ public class PlayerController : MonoBehaviour
     public void OnInventory(InputAction.CallbackContext context)
     {
         onInventoryInput?.Invoke();
+    }
+    public void SetCursor()
+    {
+        if (canLook)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 }

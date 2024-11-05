@@ -24,5 +24,8 @@ public class Player : MonoBehaviour
         playerHeartSensor = GetComponentInChildren<PlayerHeartSensor>();
 
     }
-    
+    private void Start()
+    {
+        playerController.SetCursor();
+    }
 }
