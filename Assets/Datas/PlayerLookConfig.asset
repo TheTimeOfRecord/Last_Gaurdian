@@ -12,10 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2415896d3528e054bb70fecc2c9ad61c, type: 3}
   m_Name: PlayerLookConfig
   m_EditorClassIdentifier: 
-  cameraContainer: {fileID: 0}
   maxXRotLook: 85
-  minXRotLook: -85
+  minXRotLook: -50
   lookSensitivity: 0.1
-  camCurXRot: 0
-  mouseDelta: {x: 0, y: 0}
-  canLook: 1
