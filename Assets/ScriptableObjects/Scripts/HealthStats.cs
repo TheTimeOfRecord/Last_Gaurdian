@@ -4,6 +4,6 @@
 public class HealthStats : ScriptableObject
 {
     [Header("Health")]
-    public float curHP;
-    public float maxHP;
+    public float curHp;
+    public float maxHp;
 }

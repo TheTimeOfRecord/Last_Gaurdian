@@ -53,8 +53,6 @@ public class PlayerMovement : MonoBehaviour
         }
         animationManager.Initialize(animator);
 
-        SetCursor();
-
         moveSpeed = movementStats.walkSpeed;
         lastMoveTime = Time.time;
         lastJumpTime = Time.time;
@@ -204,17 +202,5 @@ public class PlayerMovement : MonoBehaviour
     public void SetIsHeartWater(bool inputIsHeartWater)
     {
         isHeartWater = inputIsHeartWater;
-    }
-
-    public void SetCursor()
-    {
-        if (canLook)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
     }
 }
