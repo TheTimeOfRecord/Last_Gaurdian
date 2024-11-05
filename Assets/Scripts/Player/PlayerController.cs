@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public event Action onAttackInput;
     public event Action onInventoryInput;
 
-    public bool canLook => PlayerManager.Instance.Player.playerController.canLook;
+    public bool canLook => PlayerManager.Instance.Player.playerMovement.canLook;
     public void OnMove(InputAction.CallbackContext context)
     {
         if(context.phase == InputActionPhase.Performed)
