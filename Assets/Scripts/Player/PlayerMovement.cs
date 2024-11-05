@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -102,6 +102,14 @@ public class PlayerMovement : MonoBehaviour
     private void HandleJumpInput(bool isPressed)
     {
         isJumpPressed = isPressed;
+
+        if (animationManager != null)
+        {
+            if (canJump)
+            {
+                animationManager.TriggerJump();
+            }
+        }
     }
 
     private void HandleRunInput(bool isRunning)
