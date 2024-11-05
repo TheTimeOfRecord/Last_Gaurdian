@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public PlayerMovementStats movementStats;
+    public SteminaStats playerSteminaStats;
     [HideInInspector] public Vector2 moveDirection;
     [HideInInspector] public float moveSpeed;
     [HideInInspector] public bool canMove = true;
@@ -115,6 +116,7 @@ public class PlayerMovement : MonoBehaviour
             if(moveSpeed == movementStats.runSpeed)
             {
                 // TODO : 달리기 스테미나 사용
+                PlayerManager.Instance.Player.playerCondition.UseStamina(playerSteminaStats.runStemina);
             }
         }
     }
@@ -125,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rigidbody.AddForce(transform.up * movementStats.jumpImpulse, ForceMode.Impulse);
             lastJumpTime = Time.time;
+            PlayerManager.Instance.Player.playerCondition.UseStamina(playerSteminaStats.jumpStemina);
         }
     }
 
