@@ -40413,8 +40413,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiCondition: {fileID: 0}
-  noHungerHealthDecay: 1
-  noStaminaHealthDecay: 15
+  noHungerHealthDecay: 2
+  noThirstySteminaDecay: 15
+  thirstDrainPerRun: 0.5
+  thirstDrainPerJump: 1
 --- !u!114 &1097868045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40441,6 +40443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   playerCondition: {fileID: 0}
+  playerMovement: {fileID: 0}
   playerPhysics: {fileID: 0}
   playerHeartSensor: {fileID: 0}
 --- !u!114 &1097868047
@@ -63274,7 +63277,7 @@ MonoBehaviour:
   curValue: 0
   startValue: 200
   maxValue: 400
-  passiveValue: 10
+  passiveValue: 1
   uiBar: {fileID: 964084671}
 --- !u!114 &1683780120
 MonoBehaviour:

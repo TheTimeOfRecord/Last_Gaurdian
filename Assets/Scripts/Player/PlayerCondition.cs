@@ -10,9 +10,16 @@ public class PlayerCondition : MonoBehaviour
     Condition stamina { get { return uiCondition.stamina; } }
 
     public float noHungerHealthDecay;
-    public float noStaminaHealthDecay;
-    
-    
+    public float noThirstySteminaDecay;
+    public float thirstDrainPerRun;
+    public float thirstDrainPerJump;
+
+    private void Start()
+    {
+        PlayerManager.Instance.Player.playerMovement.onRunEvent += UseThirstyPerRun;
+        PlayerManager.Instance.Player.playerMovement.onJumpEvent += UseThirstyPerJump;
+    }
+
     private void Update()
     {
         hunger.Subtract(hunger.passiveValue * Time.deltaTime);
@@ -28,14 +35,14 @@ public class PlayerCondition : MonoBehaviour
             health.Subtract(noHungerHealthDecay * Time.deltaTime);
         }
 
-        if (thirst.curValue > 0.0f)
+        if (thirst.curValue > thirst.maxValue * 0.4)
         {
             stamina.Add(stamina.passiveValue * Time.deltaTime);
         }
         else if (thirst.curValue <= 0.0f)
         {
             health.Subtract(noHungerHealthDecay * Time.deltaTime);
-            stamina.Subtract(noStaminaHealthDecay * Time.deltaTime);
+            stamina.Subtract(noThirstySteminaDecay * Time.deltaTime);
         }
 
         if(health.curValue < 0.0f)
@@ -73,5 +80,14 @@ public class PlayerCondition : MonoBehaviour
         
         stamina.Subtract(amount);
         return true;
+    }
+
+    public void UseThirstyPerRun()
+    {
+        thirst.Subtract(thirstDrainPerRun);
+    }
+    public void UseThirstyPerJump()
+    {
+        thirst.Subtract(thirstDrainPerJump);
     }
 }

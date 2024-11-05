@@ -1,4 +1,5 @@
-﻿using Unity.VisualScripting;
+﻿using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -25,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("PlayerSensor")]
     public LayerMask waterLayer;
 
+    public event Action onRunEvent;
+    public event Action onJumpEvent;
 
     private Rigidbody rigidbody;
 
@@ -110,14 +113,21 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((Time.time - lastMoveTime) > movementStats.forceDelay && (canJump || isHeartWater) && canMove)
         {
+            if (moveSpeed == movementStats.runSpeed) // Run 일 때 스테미나 적용
+            {
+                // 스테미나 사용 시 달리기
+                if (PlayerManager.Instance.Player.playerCondition.UseStamina(playerSteminaStats.runStemina))
+                {
+                    onRunEvent?.Invoke();
+                }
+                else// 스테미나 사용불가 시 걷기
+                {
+                    moveSpeed = movementStats.walkSpeed;
+                }
+            }
             Vector3 moveDir = transform.forward * moveDirection.y + transform.right * moveDirection.x; ;
             rigidbody.AddForce(moveDir * moveSpeed, movementStats.forceMode);
             lastMoveTime = Time.time;
-            if(moveSpeed == movementStats.runSpeed)
-            {
-                // TODO : 달리기 스테미나 사용
-                PlayerManager.Instance.Player.playerCondition.UseStamina(playerSteminaStats.runStemina);
-            }
         }
     }
 
@@ -125,9 +135,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isJumpPressed && canJump && canMove)
         {
-            rigidbody.AddForce(transform.up * movementStats.jumpImpulse, ForceMode.Impulse);
-            lastJumpTime = Time.time;
-            PlayerManager.Instance.Player.playerCondition.UseStamina(playerSteminaStats.jumpStemina);
+            // 스테미나가 사용되면 점프
+            if (PlayerManager.Instance.Player.playerCondition.UseStamina(playerSteminaStats.jumpStemina))
+            {
+                rigidbody.AddForce(transform.up * movementStats.jumpImpulse, ForceMode.Impulse);
+                lastJumpTime = Time.time;
+                onJumpEvent?.Invoke();
+            }
         }
     }
 
