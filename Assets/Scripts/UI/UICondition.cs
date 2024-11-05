@@ -7,10 +7,10 @@ public class UICondition : MonoBehaviour
     public Condition health;
     public Condition hunger;
     public Condition thirst;
-    public Condition temperature;
     public Condition stamina;
-    void Start()
+
+    private void Start()
     {
-           
+        PlayerManager.Instance.Player.playerCondition.uiCondition = this;
     }
 }
