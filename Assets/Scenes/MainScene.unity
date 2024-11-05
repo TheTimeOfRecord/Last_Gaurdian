@@ -39291,6 +39291,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1309042559}
   - {fileID: 568163171}
   - {fileID: 1184125985}
   m_Father: {fileID: 0}
@@ -39384,7 +39385,7 @@ MonoBehaviour:
   playerController: {fileID: 0}
   playerCondition: {fileID: 0}
   playerPhysics: {fileID: 0}
-  playerHeart: {fileID: 0}
+  playerHeartSensor: {fileID: 0}
 --- !u!114 &1097868047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39416,7 +39417,7 @@ MonoBehaviour:
   isMove: 0
   isJumpPressed: 0
   canJump: 1
-  onWater: 0
+  isHeartWater: 0
   cameraContainer: {fileID: 568163171}
   playerLookConfig: {fileID: 11400000, guid: 68f662eb85893464fadd16742299d139, type: 2}
   camCurXRot: 0
@@ -47310,6 +47311,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7502093819422123217, guid: 80cd59c9c9540eb4c8a76eea92700131, type: 3}
   m_PrefabInstance: {fileID: 1308933297}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1309042559 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2485707818240578149, guid: 797c81301b66d4f42810341e54418561, type: 3}
+  m_PrefabInstance: {fileID: 1361518239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1312038229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49285,6 +49291,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7502093819422123217, guid: 80cd59c9c9540eb4c8a76eea92700131, type: 3}
   m_PrefabInstance: {fileID: 1360483664}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1361518239
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1097868041}
+    m_Modifications:
+    - target: {fileID: 2485707818240578149, guid: 797c81301b66d4f42810341e54418561, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485707818240578149, guid: 797c81301b66d4f42810341e54418561, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485707818240578149, guid: 797c81301b66d4f42810341e54418561, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485707818240578149, guid: 797c81301b66d4f42810341e54418561, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485707818240578149, guid: 797c81301b66d4f42810341e54418561, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485707818240578149, guid: 797c81301b66d4f42810341e54418561, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485707818240578149, guid: 797c81301b66d4f42810341e54418561, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485707818240578149, guid: 797c81301b66d4f42810341e54418561, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485707818240578149, guid: 797c81301b66d4f42810341e54418561, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485707818240578149, guid: 797c81301b66d4f42810341e54418561, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3760430530055214817, guid: 797c81301b66d4f42810341e54418561, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589738504928567290, guid: 797c81301b66d4f42810341e54418561, type: 3}
+      propertyPath: m_Name
+      value: Magician_RIO
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 797c81301b66d4f42810341e54418561, type: 3}
 --- !u!1001 &1367569735
 PrefabInstance:
   m_ObjectHideFlags: 0
