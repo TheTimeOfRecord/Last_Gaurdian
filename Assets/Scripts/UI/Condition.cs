@@ -1,12 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum ECondition
-{
-    CurValue,
-    MaxValue
-}
-
 public class Condition : MonoBehaviour
 {
     public float curValue;
@@ -30,20 +24,18 @@ public class Condition : MonoBehaviour
         return curValue / maxValue;
     }
 
-    public void Add(ECondition condition, float value)
+    public void Add(float value)
     {
-        if (condition == ECondition.CurValue)
-        {
-            curValue = Mathf.Min(curValue + value, maxValue);
-        }
-        else if (condition == ECondition.MaxValue)
-        {
-            maxValue += value;
-        }
+        curValue = Mathf.Min(curValue + value, maxValue);
     }
 
     public void Subtract(float value)
     {
-        curValue -= Mathf.Max(curValue - value, 0);
+        curValue = Mathf.Max(curValue - value, 0);
+    }
+
+    public void AddMaxValue(float value)
+    {
+        maxValue += value;
     }
 }

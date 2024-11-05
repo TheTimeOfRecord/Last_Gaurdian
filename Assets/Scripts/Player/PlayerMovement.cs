@@ -1,11 +1,13 @@
-﻿using Unity.VisualScripting;
+﻿using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public PlayerStats playerStats;
+    public PlayerMovementStats movementStats;
+    public SteminaStats playerSteminaStats;
     [HideInInspector] public Vector2 moveDirection;
     [HideInInspector] public float moveSpeed;
     [HideInInspector] public bool canMove = true;
@@ -24,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("PlayerSensor")]
     public LayerMask waterLayer;
 
+    public event Action onRunEvent;
+    public event Action onJumpEvent;
 
     private Rigidbody rigidbody;
 
@@ -35,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
         SetCursor();
 
-        moveSpeed = playerStats.walkSpeed;
+        moveSpeed = movementStats.walkSpeed;
         lastMoveTime = Time.time;
         lastJumpTime = Time.time;
 
@@ -81,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleRunInput(bool isRunning)
     {
-        moveSpeed = isRunning ? playerStats.runSpeed : playerStats.walkSpeed;
+        moveSpeed = isRunning ? movementStats.runSpeed : movementStats.walkSpeed;
     }
 
     private void HandleLookInput(Vector2 delta)
@@ -107,10 +111,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        if ((Time.time - lastMoveTime) > playerStats.forceDelay && (canJump || isHeartWater) && canMove)
+        if ((Time.time - lastMoveTime) > movementStats.forceDelay && (canJump || isHeartWater) && canMove)
         {
+            if (moveSpeed == movementStats.runSpeed) // Run 일 때 스테미나 적용
+            {
+                // 스테미나 사용 시 달리기
+                if (PlayerManager.Instance.Player.playerCondition.UseStamina(playerSteminaStats.runStemina))
+                {
+                    onRunEvent?.Invoke();
+                }
+                else// 스테미나 사용불가 시 걷기
+                {
+                    moveSpeed = movementStats.walkSpeed;
+                }
+            }
             Vector3 moveDir = transform.forward * moveDirection.y + transform.right * moveDirection.x; ;
-            rigidbody.AddForce(moveDir * moveSpeed, playerStats.forceMode);
+            rigidbody.AddForce(moveDir * moveSpeed, movementStats.forceMode);
             lastMoveTime = Time.time;
         }
     }
@@ -119,14 +135,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isJumpPressed && canJump && canMove)
         {
-            rigidbody.AddForce(transform.up * playerStats.jumpImpulse, ForceMode.Impulse);
-            lastJumpTime = Time.time;
+            // 스테미나가 사용되면 점프
+            if (PlayerManager.Instance.Player.playerCondition.UseStamina(playerSteminaStats.jumpStemina))
+            {
+                rigidbody.AddForce(transform.up * movementStats.jumpImpulse, ForceMode.Impulse);
+                lastJumpTime = Time.time;
+                onJumpEvent?.Invoke();
+            }
         }
     }
 
     private bool CanJump()
     {
-        if ((Time.time - lastJumpTime > playerStats.waterJumpDelay) && isHeartWater)//물에서의 점프 딜레이, 심장위치에 물이있으면 점프가능
+        if ((Time.time - lastJumpTime > movementStats.waterJumpDelay) && isHeartWater)//물에서의 점프 딜레이, 심장위치에 물이있으면 점프가능
         {
             return true;
         }
@@ -142,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
         for (int i = 0; i < rays.Length; i++)
         {
             // TODO : 점프가능한 레이어 마스크 설정
-            if (Physics.Raycast(rays[i], 0.1f, playerStats.canJumpLayer))//
+            if (Physics.Raycast(rays[i], 0.1f, movementStats.canJumpLayer))//
             {
                 return true;
             }
