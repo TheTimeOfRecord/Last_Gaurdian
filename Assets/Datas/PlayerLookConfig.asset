@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerLookConfig
   m_EditorClassIdentifier: 
   maxXRotLook: 85
-  minXRotLook: -50
+  minXRotLook: -40
   lookSensitivity: 0.1
