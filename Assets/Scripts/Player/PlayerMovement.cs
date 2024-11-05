@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Animation")]
+    private PlayerAnimationManager animationManager;
+
     [Header("Movement")]
     public PlayerMovementStats movementStats;
     public SteminaStats playerSteminaStats;
@@ -36,6 +39,19 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rigidbody = PlayerManager.Instance.Player.GetComponent<Rigidbody>();
+
+        Animator animator = GetComponentInChildren<Animator>();
+        if (animator == null)
+        {
+            return;
+        }
+
+        animationManager = GetComponent<PlayerAnimationManager>();
+        if (animationManager == null)
+        {
+            animationManager = gameObject.AddComponent<PlayerAnimationManager>();
+        }
+        animationManager.Initialize(animator);
 
         SetCursor();
 
@@ -76,6 +92,11 @@ public class PlayerMovement : MonoBehaviour
     private void HandleMoveInput(Vector2 direction)
     {
         moveDirection = direction;
+
+        if (animationManager != null)
+        {
+            animationManager.SetMovementAnimation(moveDirection);
+        }
     }
 
     private void HandleJumpInput(bool isPressed)
@@ -119,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
                 if (PlayerManager.Instance.Player.playerCondition.UseStamina(playerSteminaStats.runStemina))
                 {
                     onRunEvent?.Invoke();
+
                 }
                 else// 스테미나 사용불가 시 걷기
                 {

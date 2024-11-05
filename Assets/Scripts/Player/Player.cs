@@ -9,6 +9,11 @@ public class Player : MonoBehaviour
     public PlayerMovement playerMovement;
     public PlayerPhysics playerPhysics;
     public PlayerHeartSensor playerHeartSensor;
+
+    public PlayerJump playerJump;
+    public PlayerAttack playerAttack;
+    private PlayerAnimationManager animationManager;
+
     private void Awake()
     {
         PlayerManager.Instance.Player = this;
@@ -17,6 +22,7 @@ public class Player : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         playerPhysics = GetComponent<PlayerPhysics>();
         playerHeartSensor = GetComponentInChildren<PlayerHeartSensor>();
-    }
 
+    }
+    
 }
