@@ -60918,7 +60918,27 @@ MonoBehaviour:
   - poolName: Golem
     prefab: {fileID: 3310571324887488590, guid: 8407b3f81f1674e7e8a7d0296ce2d9b8, type: 3}
     initialSize: 5
+    parentTransform: {fileID: 1527710963}
+  - poolName: Mimic
+    prefab: {fileID: 5975925095345262378, guid: cdf77885c4ffc49b7ae6fa65bf24449e, type: 3}
+    initialSize: 5
+    parentTransform: {fileID: 619322394}
+  - poolName: MiniSkull
+    prefab: {fileID: 8718055908597217358, guid: 4a9c8f082e23148a8af1177f28016ce6, type: 3}
+    initialSize: 5
+    parentTransform: {fileID: 457737827}
+  - poolName: Slime
+    prefab: {fileID: 5770208316070478973, guid: bb167d2228cd14b6c8fd24ded39d73e0, type: 3}
+    initialSize: 5
     parentTransform: {fileID: 81198533}
+  - poolName: OctopusMonster
+    prefab: {fileID: 8855634138233660308, guid: bf53beafd44174d2693679455e15038b, type: 3}
+    initialSize: 5
+    parentTransform: {fileID: 619322394}
+  - poolName: ThornMonster
+    prefab: {fileID: 8855634138233660308, guid: bf53beafd44174d2693679455e15038b, type: 3}
+    initialSize: 5
+    parentTransform: {fileID: 1527710963}
 --- !u!4 &1630227070
 Transform:
   m_ObjectHideFlags: 0
