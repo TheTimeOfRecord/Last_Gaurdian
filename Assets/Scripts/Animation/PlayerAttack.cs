@@ -6,8 +6,8 @@ public class PlayerAttack : MonoBehaviour
     private PlayerAnimationManager animationManager;
 
     [Header("Attack Settings")]
-    public float comboTimeWindow = 0.5f;
-    public float thirdAttackCoolTime = 1.7f;
+    [SerializeField] private float comboTimeWindow = 0.5f;
+    [SerializeField] private float thirdAttackCoolTime = 1.7f;
     
     private int currrentAttackIndex = 0;
     private bool isComboActive = false;
