@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9084aa38ede4ef449aec9edda3197c40, type: 3}
+  m_Name: Cannon Tower
+  m_EditorClassIdentifier: Assembly-CSharp::AttackableBuilding
+  structureId: 1102
+  structureName: "\uB300\uD3EC \uD0C0\uC6CC"
+  structureDescription: "\uC6D0\uAC70\uB9AC \uACF5\uACA9\uC744 \uD558\uB294 \uB300\uD3EC
+    \uD0C0\uC6CC\uC785\uB2C8\uB2E4."
+  structurePrefab: {fileID: 0}
+  maxHp: 100
+  curHp: 100
+  level: 1
+  hpIncreasePerLevel: 10
+  hasPassive: 0
+  passiveRepairValue: 0
+  passiveRepairDelay: 0
+  passiveIncreasePerLevel: 0
+  resourceQuantityPair:
+  - resourceId: 0
+    quantity: 0
+  - resourceId: 0
+    quantity: 0
+  attackDamage: 20
+  attackDelay: 2
+  damageIncreasePerLevel: 4
+  attackRange: 25
+  isRanged: 1
+  projectilePrefab: {fileID: 0}

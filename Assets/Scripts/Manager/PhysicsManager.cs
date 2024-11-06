@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class PhysicsManager : SingleTonBase<PhysicsManager>
 {
     [Header("Physics")]
     public PhysicsConfig physicsConfig;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         physicsConfig = Resources.Load<PhysicsConfig>("Physics/PhysicsConfig");
         if (physicsConfig != null)
         {

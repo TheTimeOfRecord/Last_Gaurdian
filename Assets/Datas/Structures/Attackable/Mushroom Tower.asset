@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9084aa38ede4ef449aec9edda3197c40, type: 3}
+  m_Name: Mushroom Tower
+  m_EditorClassIdentifier: 
+  structureId: 1100
+  structureName: "\uBC84\uC12F \uD0C0\uC6CC"
+  structureDescription: "\uADFC\uC811 \uBC94\uC704 \uACF5\uACA9\uC744 \uD558\uB294
+    \uADC0\uC5EC\uC6B4 \uBC84\uC12F \uD0C0\uC6CC\uC785\uB2C8\uB2E4."
+  structurePrefab: {fileID: 0}
+  maxHp: 150
+  curHp: 150
+  level: 1
+  hpIncreasePerLevel: 15
+  hasPassive: 1
+  passiveRepairValue: 5
+  passiveRepairDelay: 1
+  passiveIncreasePerLevel: 1
+  resourceQuantityPair: []
+  attackDamage: 10
+  attackDelay: 0.5
+  attackRange: 3
+  damageIncreasePerLevel: 2
+  isRanged: 0
+  projectilePrefab: {fileID: 0}
