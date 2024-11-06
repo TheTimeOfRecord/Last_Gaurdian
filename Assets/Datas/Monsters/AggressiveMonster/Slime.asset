@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8603212597040472889a0f6dd05a4c6c, type: 3}
   m_Name: Slime
   m_EditorClassIdentifier: 
+  monsterID: 2004
   health: 20
   walkSpeed: 2
   runSpeed: 5

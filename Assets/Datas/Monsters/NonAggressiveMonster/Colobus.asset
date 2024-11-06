@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b32c86f300649e8a72d74f19a71e3c, type: 3}
   m_Name: Colobus
   m_EditorClassIdentifier: 
+  monsterID: 2100
   health: 10
   walkSpeed: 1
   runSpeed: 4
