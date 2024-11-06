@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9b32c86f300649e8a72d74f19a71e3c, type: 3}
-  m_Name: NonAggressiveMonster
+  m_Name: Muskrat
   m_EditorClassIdentifier: 
   health: 10
   walkSpeed: 1

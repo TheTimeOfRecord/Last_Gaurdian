@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 public class MonsterData : ScriptableObject
 {
+    public int monsterID;
     [Header("Stats")] 
     public int health;
     public float walkSpeed;

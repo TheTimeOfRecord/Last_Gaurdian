@@ -135,11 +135,43 @@ public class AggressiveMonster : Monster
     
     public override void TakeDamage(int amount, Transform attacker)
     {
-        
+        monsterData.health -= amount;
+        if (monsterData.health <= 0)
+        {
+            Die();
+        }
+
+        StartCoroutine(DamageFlash());
     }
 
     public override void Heal(int amount)
     {
+        monsterData.health += amount;
+    }
+
+    private void Die()
+    {
+        for (int i = 0; i < monsterData.dropOnDeath.Length; i++)
+        {
+            //아이템 저장하는 변수 이름 가져와서 dropPrefab에 넣기
+            //Instantiate(monsterData.dropOnDeath[i].dropPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
+        }
         
+        gameObject.SetActive(false);
+    }
+
+    private IEnumerator DamageFlash()
+    {
+        for (int i = 0; i < meshRenderers.Length; i++)
+        {
+            meshRenderers[i].material.color = Color.red;
+        }
+        
+        yield return new WaitForSeconds(0.1f);
+
+        for (int i = 0; i < meshRenderers.Length; i++)
+        {
+            meshRenderers[i].material.color = Color.white;
+        }
     }
 }

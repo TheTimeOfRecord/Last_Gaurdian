@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8603212597040472889a0f6dd05a4c6c, type: 3}
-  m_Name: AggressiveMonster
+  m_Name: Slime
   m_EditorClassIdentifier: 
   health: 20
   walkSpeed: 2
   runSpeed: 5
-  dropOnDeath: []
+  dropOnDeath:
+  - {fileID: 0}
   detectDistance: 8
   damage: 10
   attackRate: 1
