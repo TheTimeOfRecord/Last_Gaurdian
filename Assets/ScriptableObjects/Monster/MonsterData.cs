@@ -15,7 +15,6 @@ public class MonsterData : ScriptableObject
     [Header("Combat")] 
     public float damage;
     public float attackRate;
-    public float lastAttackTime;
     public float attackDistance;
 
     public float fieldOfView;

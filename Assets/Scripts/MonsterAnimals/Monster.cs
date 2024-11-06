@@ -1,7 +1,4 @@
 using UnityEngine;
-using UnityEngine.AI;
-using Random = UnityEngine.Random;
-
 public enum EAIState
 {
     Idle,
@@ -9,7 +6,7 @@ public enum EAIState
     Attacking
 }
 
-public abstract class Monster : MonoBehaviour
+public abstract class Monster : MonoBehaviour, IDamagable
 {
     public abstract void SetState(EAIState state);
 
@@ -18,4 +15,7 @@ public abstract class Monster : MonoBehaviour
     public abstract void AttackingUpdate();
 
     public abstract bool IsPlayerInFieldOfView();
+
+    public abstract void TakeDamage(int amount, Transform attacker);
+    public abstract void Heal(int amount);
 }

@@ -12,11 +12,12 @@ public class AggressiveMonster : Monster
     private EAIState aiState;
     
     private float playerDistance;
+    private float lastAttackTime;
     
     private Animator animator;
     private SkinnedMeshRenderer[] meshRenderers;
 
-    public Vector3 targetPosition;
+    public Transform targetPosition;
 
     private void Awake()
     {
@@ -28,7 +29,7 @@ public class AggressiveMonster : Monster
     private void Start()
     {
         SetState(EAIState.Wandering);
-        agent.SetDestination(targetPosition);
+        agent.SetDestination(targetPosition.position);
     }
 
     private void Update()
@@ -74,10 +75,14 @@ public class AggressiveMonster : Monster
     
     public override void PassiveUpdate()
    {
-       //todo : 동물한테만 적용 동물이 피해를 당하면 공격하는 로직 작성
        if (playerDistance < monsterData.detectDistance)
        {
            SetState(EAIState.Attacking);
+       }
+       else
+       {
+           SetState(EAIState.Wandering);
+           agent.SetDestination(targetPosition.position);
        }
    }
 
@@ -86,9 +91,9 @@ public class AggressiveMonster : Monster
         if (playerDistance < monsterData.attackDistance && IsPlayerInFieldOfView())
         {
             agent.isStopped = true;
-            if (Time.time - monsterData.lastAttackTime > monsterData.attackRate)
+            if (Time.time - lastAttackTime > monsterData.attackRate)
             {
-                monsterData.lastAttackTime = Time.time;
+                lastAttackTime = Time.time;
                 //todo : 플레이어 데미지 입히는 코드 넣기
                 //PlayerManager.Instance.Player.playerController.
                 animator.speed = 1;
@@ -126,5 +131,15 @@ public class AggressiveMonster : Monster
         Vector3 directionToPlayer = PlayerManager.Instance.Player.transform.position - transform.position;
         float angle = Vector3.Angle(transform.forward, directionToPlayer);
         return angle < monsterData.fieldOfView * 0.5f;
+    }
+    
+    public override void TakeDamage(int amount, Transform attacker)
+    {
+        
+    }
+
+    public override void Heal(int amount)
+    {
+        
     }
 }
