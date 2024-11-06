@@ -7,8 +7,17 @@ public class Weapon : MonoBehaviour
     // public WeaponData weaponData;
     public int attackDamage = 10; // -> WeaponData 생기면 없앤다
     public Collider weaponCollier;
+
+
     private bool isAttacking = false;
 
+    private void Awake()
+    {
+        if (weaponCollier != null)
+        {
+            weaponCollier.enabled = false;
+        }
+    }
     private void Start()
     {
         if (weaponCollier != null)
@@ -16,22 +25,24 @@ public class Weapon : MonoBehaviour
             weaponCollier.enabled = false;
         }
     }
+    /*
     public void StartAttack()
     {
-        isAttacking = true;
         if (weaponCollier != null)
         {
             weaponCollier.enabled = true;
+            isAttacking = true;
         }
     }
     public void EndAttack()
     {
-        isAttacking = false;
         if (weaponCollier != null)
         {
             weaponCollier.enabled = false;
+            isAttacking = false;
         }
     }
+    */
     private void OnTriggerEnter(Collider other)
     {
         if (isAttacking)
