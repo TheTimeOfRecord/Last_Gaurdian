@@ -18,8 +18,3 @@ public abstract class ItemData : ScriptableObject
     public abstract void Use();
 }
 
-
-
-
-
-

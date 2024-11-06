@@ -1,10 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public event Action onAttackInput;
     public event Action onInventoryInput;
 
+<<<<<<< HEAD
     private bool isInventoryOpen = false; // 인벤토리 상태를 저장하는 변수
     private Interaction interaction;
 
@@ -26,6 +25,8 @@ public class PlayerController : MonoBehaviour
         interaction = GetComponent<Interaction>();
     }
 
+=======
+>>>>>>> parent of 7b70851 (Complex Prefabs & Scripts)
     public bool canLook => PlayerManager.Instance.Player.playerMovement.canLook;
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -78,32 +79,17 @@ public class PlayerController : MonoBehaviour
     }
     public void OnInventory(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed)
-        {
-            // 인벤토리 상태를 토글
-            isInventoryOpen = !isInventoryOpen;
-
-            // 인벤토리 상태에 따라 커서 설정
-            SetCursor(isInventoryOpen);
-
-            // 인벤토리가 열리면 canLook을 false로 설정하여 플레이어가 보지 않도록 함
-            PlayerManager.Instance.Player.playerMovement.canLook = !isInventoryOpen;
-
-            // 인벤토리 이벤트 호출
-            onInventoryInput?.Invoke();
-        }
+        onInventoryInput?.Invoke();
     }
-    public void SetCursor(bool showCursor)
+    public void SetCursor()
     {
-        if (showCursor)
+        if (canLook)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true; // 커서를 보이게 설정
+            Cursor.lockState = CursorLockMode.Locked;
         }
         else
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false; // 커서를 숨김
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

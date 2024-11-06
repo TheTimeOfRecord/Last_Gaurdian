@@ -14,12 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EquipmentItem
   itemName: "\uB3C4\uB07C\uC785\uB2C8\uB2E4."
   description: "\uC2A4\uC73D\uC2A4\uC73D"
-  icon: {fileID: 21300000, guid: 6a08ec4b334ea1c46b8171679417a74f, type: 3}
+  icon: {fileID: 0}
   itemID: 201
-  dropPrefab: {fileID: 3917721986897134284, guid: 5fbe1436ce9277c4b8a7f4017238827c, type: 3}
-  canStack: 0
-  maxStackAmount: 0
-  equipPrefab: {fileID: 3917721986897134284, guid: 5fbe1436ce9277c4b8a7f4017238827c, type: 3}
   equipmentType: 0
-  attackPower: 5
-  equipPrefab: {fileID: 3917721986897134284, guid: 5fbe1436ce9277c4b8a7f4017238827c, type: 3}
+  attackPower: 0

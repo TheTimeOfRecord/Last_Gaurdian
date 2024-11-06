@@ -14,10 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ResourceItem
   itemName: "\uB098\uBB34"
   description: "\uB098\uBB34\uB97C \uBCA0\uC5B4 \uB098\uC628 \uB098\uBB34"
-  icon: {fileID: 21300000, guid: 0e1ccb64303778e4081913a6d9cca677, type: 3}
+  icon: {fileID: 0}
   itemID: 302
-  dropPrefab: {fileID: 5002406578573668478, guid: 4d432097959b3924988e4dbf111724b1, type: 3}
-  canStack: 1
-  maxStackAmount: 10
-  equipPrefab: {fileID: 5002406578573668478, guid: 4d432097959b3924988e4dbf111724b1, type: 3}
   quantity: 0

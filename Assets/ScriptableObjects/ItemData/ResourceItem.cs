@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Resource Item", menuName = "Items/Resource")]
 public class ResourceItem : ItemData
 {
-    public int quantity; // 갯수
+    public int quantity;
 
     public override void Use()
     {

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Item/Item_CookedMeat.prefab.meta
+<<<<<<<< HEAD:Assets/Prefabs/Item/Item_CookedMeat.prefab.meta
+guid: 7f2f6b2a7a280e64f864dd2577291852
+=======
+guid: da6e2cba746c4ea4eb5901a5e18abff6
+>>>>>>> parent of 7b70851 (Complex Prefabs & Scripts):Assets/3DWorldInSeconds/Bridges/UniversalRenderingPipeline/URP_Specific_Pack.unitypackage.meta
+PrefabImporter:
+========
+guid: f7e8b407e6a954a1393416dd70099f76
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> Dev:Assets/Scripts/Interface.meta
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
