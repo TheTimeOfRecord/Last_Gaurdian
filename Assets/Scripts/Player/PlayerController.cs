@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
     public event Action onInventoryInput;
 
     private bool isInventoryOpen = false; // 인벤토리 상태를 저장하는 변수
-    //public IInteractable interactable;
-    //public GameObject interactGameObject;
     private Interaction interaction;
 
     private void Start()
@@ -72,13 +70,7 @@ public class PlayerController : MonoBehaviour
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && interaction.curInteractable != null)
-        { // 버튼이 눌렸을때, 허공에 아이템을 눌리지 않았을때 ( = 물건을 바라볼때 )
-            interaction.curInteractable.OnInteract(); // 상호작용한다.
-            interaction.curInteractGameObject = null; // 상호작용하고나서 꺼주기
-            interaction.curInteractable = null;
-            interaction.promptText.gameObject.SetActive(false); // 프롬포트 꺼주기
-        }
+        onInteractInput?.Invoke();
     }
     public void OnAttack(InputAction.CallbackContext context)
     {

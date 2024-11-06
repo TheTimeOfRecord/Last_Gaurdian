@@ -48,6 +48,17 @@ public class Interaction : MonoBehaviour
         }
     }
 
+    public void OnInteractInput(InputAction.CallbackContext context)
+    { // f 키를 눌렀을때 작동하게끔 해주는 엑션
+        if (context.phase == InputActionPhase.Started && curInteractable != null)
+        { // 버튼이 눌렸을때, 허공에 아이템을 눌리지 않았을때 ( = 물건을 바라볼때 )
+            curInteractable.OnInteract(); // 상호작용한다.
+            curInteractGameObject = null; // 상호작용하고나서 꺼주기
+            curInteractable = null;
+            promptText.gameObject.SetActive(false); // 프롬포트 꺼주기
+        }
+    }
+
     private void SetPromptText() // 프롬포트에 출력해주기
     {
         promptText.gameObject.SetActive(true); // 프롬포트 보이게 하기
