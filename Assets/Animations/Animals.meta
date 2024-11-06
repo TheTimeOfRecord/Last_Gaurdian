@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animations/Animals.meta
 guid: bfbbfb753b4a24de48e8979cdafeeba4
+========
+guid: ccbfc687c8933364e968b5343c61c075
+>>>>>>>> Dev:Assets/Datas/Player.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

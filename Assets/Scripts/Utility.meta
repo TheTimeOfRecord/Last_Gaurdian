@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animations/Monster.meta
+guid: ba6e094740b384c1bb729f76006cd945
+========
+guid: 49ec3dc3e12bd3e4e827b109979d1e66
+>>>>>>>> Dev:Assets/Scripts/Utility.meta
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
