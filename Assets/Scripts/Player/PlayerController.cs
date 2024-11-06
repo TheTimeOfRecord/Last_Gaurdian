@@ -63,7 +63,11 @@ public class PlayerController : MonoBehaviour
     }
     public void OnAttack(InputAction.CallbackContext context)
     {
-        onAttackInput?.Invoke();
+        //onAttackInput?.Invoke();
+        if (context.phase == InputActionPhase.Performed)
+        {
+            onAttackInput?.Invoke();
+        }
     }
     public void OnInventory(InputAction.CallbackContext context)
     {
