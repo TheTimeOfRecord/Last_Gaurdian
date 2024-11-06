@@ -1,4 +1,4 @@
-﻿/*--------------------------------------------------------
+/*--------------------------------------------------------
   BridgesWindowLauncherProto.cs
 
   Created by Alain Debelley on 2021-12-22.
@@ -19,24 +19,30 @@ namespace WorldInSeconds3DProto
         static void OnProjectLoadedInEditor()
         {
             // is it the prototyping version ?
-            string worldInSecondsFolder = "Assets/3DWorldInSeconds";
+            string worldInSecondsFolder = "Assets/UnityAssets/Buildings/Bridges/3DWorldInSeconds";
             string premiumFolder = worldInSecondsFolder + "/PremiumBridges";
             bool premiumFolderExists = Directory.Exists(premiumFolder);
-           
+
             string pathPrefix = PathProviderProto.GetLogPathPrefix();
             string path = pathPrefix + "/startupWindowProtoShown.txt";
+
+            // 경로가 존재하지 않으면 생성
+            if (!Directory.Exists(pathPrefix))
+            {
+                Directory.CreateDirectory(pathPrefix);
+            }
 
             bool fileExists = File.Exists(path);
             if (!fileExists)
             {
                 UnityEditor.EditorApplication.delayCall += () =>
                 {
-                    BridgesStartupWindowProto.Open(); 
+                    BridgesStartupWindowProto.Open();
                     StreamWriter writer = new StreamWriter(path, false);
                     writer.WriteLine(version);
                     writer.Close();
                 };
-              
+
             }
             else
             {
