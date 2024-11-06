@@ -17,7 +17,7 @@ MonoBehaviour:
   walkSpeed: 1
   runSpeed: 4
   dropOnDeath: []
-  detectDistance: 0
+  detectDistance: 8
   damage: 15
   attackRate: 2
   attackDistance: 3
