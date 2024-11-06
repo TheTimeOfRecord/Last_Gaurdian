@@ -19,12 +19,14 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         animationManager = GetComponent<PlayerAnimationManager>();
+        weapon = GetComponentInChildren<Weapon>();
 
         PlayerController playerController = GetComponent<PlayerController>();
         if (playerController != null)
         {
             playerController.onAttackInput += HandleAttackInput;
         }
+
     }
 
     private void HandleAttackInput()
@@ -45,14 +47,13 @@ public class PlayerAttack : MonoBehaviour
         }
 
         isAttacking = true;
-        weapon.StartAttack();
 
         animationManager.TriggerAttack();
 
         yield return new WaitForSeconds(0.5f);
 
+
         isAttacking = false;
-        weapon.EndAttack();
 
         currrentAttackIndex++;
         if (currrentAttackIndex >= 3)
