@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ConsumableItem
   itemName: "\uC775\uC740 \uACE0\uAE30"
   description: "\uACE0\uAE30\uB294 \uB72F\uC5B4\uBA39\uB294\uAC8C \uC81C\uB9DB"
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 14e62563269c11443b9c936be93b95f4, type: 3}
   itemID: 105
-  consumableType: 1
-  effectAmount: 0
+  dropPrefab: {fileID: 8374785234458626901, guid: 7f2f6b2a7a280e64f864dd2577291852, type: 3}
+  canStack: 1
+  maxStackAmount: 5
+  equipPrefab: {fileID: 0}
+  consumableTypes: 
+  effectAmounts:
+  - 10
+  - 30
   duration: 0

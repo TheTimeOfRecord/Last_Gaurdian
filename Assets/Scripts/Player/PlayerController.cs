@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +16,17 @@ public class PlayerController : MonoBehaviour
     public event Action onInteractInput;
     public event Action onAttackInput;
     public event Action onInventoryInput;
+
+    private bool isInventoryOpen = false; // 인벤토리 상태를 저장하는 변수
+    //public IInteractable interactable;
+    //public GameObject interactGameObject;
+    private Interaction interaction;
+
+    private void Start()
+    {
+        SetCursor(false);
+        interaction = GetComponent<Interaction>();
+    }
 
     public bool canLook => PlayerManager.Instance.Player.playerMovement.canLook;
     public void OnMove(InputAction.CallbackContext context)
@@ -59,7 +72,13 @@ public class PlayerController : MonoBehaviour
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
-        onInteractInput?.Invoke();
+        if (context.phase == InputActionPhase.Started && interaction.curInteractable != null)
+        { // 버튼이 눌렸을때, 허공에 아이템을 눌리지 않았을때 ( = 물건을 바라볼때 )
+            interaction.curInteractable.OnInteract(); // 상호작용한다.
+            interaction.curInteractGameObject = null; // 상호작용하고나서 꺼주기
+            interaction.curInteractable = null;
+            interaction.promptText.gameObject.SetActive(false); // 프롬포트 꺼주기
+        }
     }
     public void OnAttack(InputAction.CallbackContext context)
     {
@@ -67,17 +86,32 @@ public class PlayerController : MonoBehaviour
     }
     public void OnInventory(InputAction.CallbackContext context)
     {
-        onInventoryInput?.Invoke();
-    }
-    public void SetCursor()
-    {
-        if (canLook)
+        if (context.phase == InputActionPhase.Performed)
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            // 인벤토리 상태를 토글
+            isInventoryOpen = !isInventoryOpen;
+
+            // 인벤토리 상태에 따라 커서 설정
+            SetCursor(isInventoryOpen);
+
+            // 인벤토리가 열리면 canLook을 false로 설정하여 플레이어가 보지 않도록 함
+            PlayerManager.Instance.Player.playerMovement.canLook = !isInventoryOpen;
+
+            // 인벤토리 이벤트 호출
+            onInventoryInput?.Invoke();
+        }
+    }
+    public void SetCursor(bool showCursor)
+    {
+        if (showCursor)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true; // 커서를 보이게 설정
         }
         else
         {
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false; // 커서를 숨김
         }
     }
 }
