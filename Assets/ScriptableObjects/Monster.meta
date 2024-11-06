@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/ItemUI/two_handed_axe.prefab.meta
+guid: 9ed4c45bb5639a34ebd6e8029df8dbcb
+PrefabImporter:
+========
+guid: 262e1983af928461495ff5a768d4251d
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> Dev:Assets/ScriptableObjects/Monster.meta
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

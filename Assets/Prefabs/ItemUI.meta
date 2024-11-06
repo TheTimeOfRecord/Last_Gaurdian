@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/ItemUI.meta
 guid: f095bbf01b98e414fb6d8d41e5514d72
+========
+guid: 6cf0cf9ccaf5e5244b7411f73a2c0226
+>>>>>>>> Dev:Assets/Prefabs/Temple.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
