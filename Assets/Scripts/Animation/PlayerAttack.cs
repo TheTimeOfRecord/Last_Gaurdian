@@ -4,11 +4,13 @@ using System.Collections;
 public class PlayerAttack : MonoBehaviour
 {
     private PlayerAnimationManager animationManager;
+    private Weapon weapon;
 
     [Header("Attack Settings")]
     [SerializeField] private float comboTimeWindow = 0.5f;
     [SerializeField] private float thirdAttackCoolTime = 1.7f;
-    
+
+
     private int currrentAttackIndex = 0;
     private bool isComboActive = false;
     private bool isCooldown = false;
@@ -43,11 +45,14 @@ public class PlayerAttack : MonoBehaviour
         }
 
         isAttacking = true;
+        weapon.StartAttack();
+
         animationManager.TriggerAttack();
 
         yield return new WaitForSeconds(0.5f);
 
         isAttacking = false;
+        weapon.EndAttack();
 
         currrentAttackIndex++;
         if (currrentAttackIndex >= 3)
