@@ -171,15 +171,31 @@ public class UIInventory : MonoBehaviour
         selectedItemStatName.text = string.Empty; // 그래서 일단 값을 없앤다.
         selectedItemStatValue.text = string.Empty; // 없애고 포문을 돌려서 넣어준다.
 
-        for (int i = 0; i < (selectedItem.item as ConsumableItem).consumableValuePerTypes.Length; i++) // 사용아이템이 없다면 for문이 돌지 않을것이다. => 사용 이유 health 10 만들기 위해
+        if( selectedItem.item is ConsumableItem )
         {
-            selectedItemStatName.text += (selectedItem.item as ConsumableItem).consumableValuePerTypes[i].type.ToString() + "\n"; // 다음을 위해 엔터
-            selectedItemStatValue.text += (selectedItem.item as ConsumableItem).consumableValuePerTypes[i].value.ToString() + "\n";
-        }
+            ConsumableItem item = selectedItem.item as ConsumableItem;
 
-        useButton.SetActive(selectedItem.item is ConsumableItem); // 버튼 type을 가져와서 넣어준다.
-        equipButton.SetActive(selectedItem.item is EquipmentItem && !slots[index].equipped); // 그리고 장착이 되어있지않다면
-        unEquipButton.SetActive(selectedItem.item is EquipmentItem && slots[index].equipped); // 장착이 되어있다면
+            for (int i = 0; i < (item).consumableValuePerTypes.Length; i++) // 사용아이템이 없다면 for문이 돌지 않을것이다. => 사용 이유 health 10 만들기 위해
+            {
+                selectedItemStatName.text += (item).consumableValuePerTypes[i].type.ToString() + "\n"; // 다음을 위해 엔터
+                selectedItemStatValue.text += (item).consumableValuePerTypes[i].value.ToString() + "\n";
+            }
+            
+            useButton.SetActive(true); // 버튼 type을 가져와서 넣어준다.
+
+        }
+        else if(selectedItem.item is EquipmentItem)
+        {
+            equipButton.SetActive(!slots[index].equipped); // 그리고 장착이 되어있지않다면
+            unEquipButton.SetActive (slots[index].equipped); // 장착이 되어있다면
+            useButton.SetActive(false); // 버튼 type을 가져와서 넣어준다.
+        }
+        else
+        {
+            equipButton.SetActive(false);
+            unEquipButton.SetActive(false);
+            useButton.SetActive(false);
+        }
         dropButton.SetActive(true); // 없애는건 무조건 켜줘야한다.
     }
 
