@@ -25,24 +25,6 @@ public class Weapon : MonoBehaviour
             weaponCollier.enabled = false;
         }
     }
-    /*
-    public void StartAttack()
-    {
-        if (weaponCollier != null)
-        {
-            weaponCollier.enabled = true;
-            isAttacking = true;
-        }
-    }
-    public void EndAttack()
-    {
-        if (weaponCollier != null)
-        {
-            weaponCollier.enabled = false;
-            isAttacking = false;
-        }
-    }
-    */
     private void OnTriggerEnter(Collider other)
     {
         if (isAttacking)
