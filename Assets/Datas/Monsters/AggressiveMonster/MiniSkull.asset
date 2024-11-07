@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MiniSkull
   m_EditorClassIdentifier: 
   monsterID: 2000
-  health: -230
+  health: 20
   walkSpeed: 2
   runSpeed: 5
   dropOnDeath:

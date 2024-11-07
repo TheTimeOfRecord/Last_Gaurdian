@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4871676593632768276}
   - component: {fileID: -6415978388719915370}
   - component: {fileID: 4036772936730395153}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FrozenTuna
   m_TagString: Untagged
   m_Icon: {fileID: 0}

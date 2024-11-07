@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mimic
   m_EditorClassIdentifier: 
   monsterID: 2003
-  health: -120
+  health: 20
   walkSpeed: 2
   runSpeed: 5
   dropOnDeath:

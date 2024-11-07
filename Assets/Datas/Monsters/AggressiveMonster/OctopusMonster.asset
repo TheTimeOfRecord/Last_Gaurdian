@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OctopusMonster
   m_EditorClassIdentifier: 
   monsterID: 2002
-  health: -130
+  health: 20
   walkSpeed: 2
   runSpeed: 5
   dropOnDeath:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Slime
   m_EditorClassIdentifier: 
   monsterID: 2004
-  health: -110
+  health: 20
   walkSpeed: 2
   runSpeed: 5
   dropOnDeath:

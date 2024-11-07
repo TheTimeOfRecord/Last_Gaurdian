@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pudu
   m_EditorClassIdentifier: 
   monsterID: 2101
-  health: 0
+  health: 10
   walkSpeed: 1
   runSpeed: 4
   dropOnDeath:
