@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea9fda06b51e0774ab8d71c64ce82bea, type: 3}
+  m_Name: Bucket
+  m_EditorClassIdentifier: 
+  itemId: 105
+  itemName: "\uC591\uB3D9\uC774"
+  itemDescription: "\uBB3C\uC744 \uB2F4\uAE30 \uC704\uD55C \uC591\uB3D9\uC774\uC774\uB2E4."
+  icon: {fileID: 21300000, guid: b4186fb16dff91e4dbfa834066f5a4cc, type: 2}
+  dropPrefab: {fileID: 432035604529955963, guid: dacefd9e4c6e4b940963df6bcf255690, type: 3}
+  canStack: 1
+  maxStackAmount: 12
+  range: 2
+  consumableValuePerTypes:
+  - type: 5
+    value: 1
+  quantity: 1

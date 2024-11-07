@@ -38641,7 +38641,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc815410bb4efb741b131b8d09b5ada0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pools: []
+  pools:
+  - poolName: 
+    prefab: {fileID: 0}
+    initialSize: 0
+    parentTransform: {fileID: 0}
 --- !u!4 &1046217767
 Transform:
   m_ObjectHideFlags: 0
@@ -40672,6 +40676,7 @@ MonoBehaviour:
   playerMovement: {fileID: 0}
   playerPhysics: {fileID: 0}
   playerHeartSensor: {fileID: 0}
+  itemData: {fileID: 0}
 --- !u!114 &1097868047
 MonoBehaviour:
   m_ObjectHideFlags: 0

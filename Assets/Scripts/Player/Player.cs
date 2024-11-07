@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,9 @@ public class Player : MonoBehaviour
     public PlayerJump playerJump;
     public PlayerAttack playerAttack;
     private PlayerAnimationManager animationManager;
+
+    public Action addItem;
+    public DefaultItem itemData;
 
     private void Awake()
     {
