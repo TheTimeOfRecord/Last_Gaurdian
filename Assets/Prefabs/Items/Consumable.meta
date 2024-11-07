@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Items/Consumable.meta
+guid: 5886f3f22bc53b249a562ba663bb4d59
+========
+guid: ef56fc4d928144b4e93e8affc4f8af4b
+>>>>>>>> Dev:Assets/Scripts/Weapons.meta
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -3,21 +3,21 @@ using UnityEngine;
 
 public class ItemDB
 {
-    Dictionary<int, ItemData> data = new Dictionary<int, ItemData>();
+    Dictionary<int, DefaultItem> data = new Dictionary<int, DefaultItem>();
 
     public ItemDB() 
     {
         ItemContainer itemContainer = Resources.Load<ItemContainer>("Datas/ItemList"); //불러오기
 
-        for (int i = 0; i < itemContainer.itmes.Count; i++)
+        for (int i = 0; i < itemContainer.items.Count; i++)
         {
-            ItemData item = itemContainer.itmes[i];
-            data.Add(item.itemID, item);
+            DefaultItem item = itemContainer.items[i];
+            data.Add(item.itemId, item);
         }
 
     }
 
-    public ItemData Get(int itemID) 
+    public DefaultItem Get(int itemID) 
     {
         if(data.ContainsKey(itemID)) return data[itemID];
         return null;

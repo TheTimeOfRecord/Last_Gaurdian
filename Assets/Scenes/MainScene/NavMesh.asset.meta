@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Items/Equipments.meta
+guid: a822ffeace526b844ac2ff6b3daafa0f
+folderAsset: yes
+DefaultImporter:
+========
 guid: 2a6739f3153d48042a3998833480c2cb
 NativeFormatImporter:
+>>>>>>>> Dev:Assets/Scenes/MainScene/NavMesh.asset.meta
   externalObjects: {}
   mainObjectFileID: 23800000
   userData: 

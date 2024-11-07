@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public event Action<bool> onRunInput;
     public event Action<Vector2> onLookInput;
     public event Action onBuildInput;
-    public event Action onInteractInput;
+    public event Action<InputAction.CallbackContext> onInteractInput;
     public event Action onAttackInput;
     public event Action onInventoryInput;
 
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
-        onInteractInput?.Invoke();
+        onInteractInput?.Invoke(context);
     }
     public void OnAttack(InputAction.CallbackContext context)
     {
