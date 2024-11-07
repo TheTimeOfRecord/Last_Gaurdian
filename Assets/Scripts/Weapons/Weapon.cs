@@ -9,8 +9,6 @@ public class Weapon : MonoBehaviour
     public Collider weaponCollier;
 
 
-    private bool isAttacking = false;
-
     private void Awake()
     {
         if (weaponCollier != null)
@@ -27,14 +25,11 @@ public class Weapon : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (isAttacking)
+        IDamagable damgable = other.GetComponent<IDamagable>();
+        if (damgable != null)
         {
-            IDamagable damgable = other.GetComponent<IDamagable>();
-            if (damgable != null)
-            {
-                damgable.TakeDamage(attackDamage, transform);
-                // WeaponData 생기면 attackDamge ->  weaponData.attackDamge (변경)
-            }
+            damgable.TakeDamage(attackDamage, transform);
+            // WeaponData 생기면 attackDamge ->  weaponData.attackDamge (변경)
         }
     }
 }

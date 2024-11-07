@@ -135,7 +135,7 @@ public class AggressiveMonster : Monster
     
     public override void TakeDamage(int amount, Transform attacker)
     {
-        
+
     }
 
     public override void Heal(int amount)
