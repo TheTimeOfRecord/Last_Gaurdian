@@ -182,16 +182,16 @@ public class PlayerMovement : MonoBehaviour
 
         Ray[] rays = new Ray[4]
         {
-            new Ray(transform.position + (transform.forward * 0.5f) + (transform.up * 0.1f), Vector3.down),
-            new Ray(transform.position + (-transform.forward * 0.5f) + (transform.up * 0.1f), Vector3.down),
-            new Ray(transform.position + (transform.right * 0.5f) + (transform.up * 0.1f), Vector3.down),
-            new Ray(transform.position + (-transform.right * 0.5f) + (transform.up * 0.1f), Vector3.down)
+            new Ray(transform.position + (transform.forward * 0.5f) + (transform.up * 0.2f), Vector3.down),
+            new Ray(transform.position + (-transform.forward * 0.5f) + (transform.up * 0.2f), Vector3.down),
+            new Ray(transform.position + (transform.right * 0.5f) + (transform.up * 0.2f), Vector3.down),
+            new Ray(transform.position + (-transform.right * 0.5f) + (transform.up * 0.2f), Vector3.down)
         };
 
         for (int i = 0; i < rays.Length; i++)
         {
             // TODO : 점프가능한 레이어 마스크 설정
-            if (Physics.Raycast(rays[i], 0.1f, movementStats.canJumpLayer))//
+            if (Physics.Raycast(rays[i], 0.4f, movementStats.canJumpLayer))//
             {
                 return true;
             }

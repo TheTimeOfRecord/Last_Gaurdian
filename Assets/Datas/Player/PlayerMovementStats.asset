@@ -16,7 +16,7 @@ MonoBehaviour:
   forceDelay: 0.1
   walkSpeed: 100
   runSpeed: 150
-  jumpImpulse: 200
+  jumpImpulse: 100
   waterJumpDelay: 0.5
   canJumpLayer:
     serializedVersion: 2

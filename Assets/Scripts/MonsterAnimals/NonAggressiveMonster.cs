@@ -122,7 +122,7 @@ public class NonAggressiveMonster : Monster
             {
                 lastAttackTime = Time.time;
                 //todo : 플레이어 데미지 입히는 코드 넣기
-                //PlayerManager.Instance.Player.playerController.GetComponent<IDamagable>().TakeDamage(damage, Transform(타입))
+                PlayerManager.Instance.Player.playerCondition.uiCondition.health.Subtract(monsterData.damage);
                 animator.speed = 1;
                 animator.SetTrigger("isAttack");
             }
@@ -170,7 +170,7 @@ public class NonAggressiveMonster : Monster
             Die();
         }
         isAttack = true;
-        StartCoroutine(DamageFlash());
+        //StartCoroutine(DamageFlash());
     }
 
     public override void Heal(int amount)
@@ -183,24 +183,24 @@ public class NonAggressiveMonster : Monster
         for (int i = 0; i < monsterData.dropOnDeath.Length; i++)
         {
             //아이템 저장하는 변수 이름 가져와서 monsterData.dropOnDeath[i] 뒤에 dropPrefab 자리 대신해서 붙이기
-            //Instantiate(monsterData.dropOnDeath[i].dropPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
+            Instantiate(monsterData.dropOnDeath[i], transform.position + Vector3.forward, Quaternion.identity);
         }
         
         gameObject.SetActive(false);
     }
     
-    private IEnumerator DamageFlash()
-    {
-        for (int i = 0; i < meshRenderers.Length; i++)
-        {
-            meshRenderers[i].material.color = Color.red;
-        }
+    //private IEnumerator DamageFlash()
+    //{
+    //    for (int i = 0; i < meshRenderers.Length; i++)
+    //    {
+    //        meshRenderers[i].material.color = Color.red;
+    //    }
         
-        yield return new WaitForSeconds(0.1f);
+    //    yield return new WaitForSeconds(0.1f);
 
-        for (int i = 0; i < meshRenderers.Length; i++)
-        {
-            meshRenderers[i].material.color = Color.white;
-        }
-    }
+    //    for (int i = 0; i < meshRenderers.Length; i++)
+    //    {
+    //        meshRenderers[i].material.color = Color.white;
+    //    }
+    //}
 }

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Pudu
   m_EditorClassIdentifier: 
   monsterID: 2101
-  health: 10
+  health: 0
   walkSpeed: 1
   runSpeed: 4
   dropOnDeath:
-  - {fileID: 0}
+  - {fileID: 3485377139243320888, guid: 73092f417f6a2fd4fb6020701e12e471, type: 3}
   detectDistance: 5
   damage: 5
   attackRate: 1.5
