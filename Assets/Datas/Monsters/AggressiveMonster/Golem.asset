@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Golem
   m_EditorClassIdentifier: 
   monsterID: 2001
-  health: 40
+  health: -180
   walkSpeed: 1
   runSpeed: 4
-  dropOnDeath: []
+  dropOnDeath:
+  - {fileID: 3485377139243320888, guid: 73092f417f6a2fd4fb6020701e12e471, type: 3}
   detectDistance: 8
   damage: 15
   attackRate: 2

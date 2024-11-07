@@ -8,7 +8,7 @@ public class MonsterData : ScriptableObject
     public int health;
     public float walkSpeed;
     public float runSpeed;
-    public ItemData[] dropOnDeath;
+    public GameObject[] dropOnDeath;
 
     [Header("AI")] 
     public float detectDistance;

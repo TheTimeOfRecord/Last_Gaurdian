@@ -16,7 +16,8 @@ MonoBehaviour:
   health: 10
   walkSpeed: 1
   runSpeed: 4
-  dropOnDeath: []
+  dropOnDeath:
+  - {fileID: 0}
   detectDistance: 5
   damage: 5
   attackRate: 1.5

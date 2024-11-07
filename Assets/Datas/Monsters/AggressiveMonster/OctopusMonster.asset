@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: OctopusMonster
   m_EditorClassIdentifier: 
   monsterID: 2002
-  health: 20
+  health: -130
   walkSpeed: 2
   runSpeed: 5
   dropOnDeath:
-  - {fileID: 0}
+  - {fileID: 3485377139243320888, guid: 73092f417f6a2fd4fb6020701e12e471, type: 3}
   detectDistance: 8
   damage: 10
   attackRate: 1

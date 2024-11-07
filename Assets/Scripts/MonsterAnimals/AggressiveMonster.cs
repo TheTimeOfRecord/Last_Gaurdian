@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -95,7 +96,8 @@ public class AggressiveMonster : Monster
             {
                 lastAttackTime = Time.time;
                 //todo : 플레이어 데미지 입히는 코드 넣기
-                //PlayerManager.Instance.Player.playerController.
+                //PlayerManager.Instance.Player.playerController.GetComponent<IDamagalbe>().TakePhysicalDamage(damage);
+                PlayerManager.Instance.Player.playerCondition.uiCondition.health.Subtract(monsterData.damage);
                 animator.speed = 1;
                 animator.SetTrigger("isAttack");
             }
@@ -140,8 +142,6 @@ public class AggressiveMonster : Monster
         {
             Die();
         }
-
-        StartCoroutine(DamageFlash());
     }
 
     public override void Heal(int amount)
@@ -152,26 +152,11 @@ public class AggressiveMonster : Monster
     private void Die()
     {
         for (int i = 0; i < monsterData.dropOnDeath.Length; i++)
-        {
+        { 
             //아이템 저장하는 변수 이름 가져와서 dropPrefab에 넣기
-            //Instantiate(monsterData.dropOnDeath[i].dropPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
+            Instantiate(monsterData.dropOnDeath[i], transform.position + Vector3.up * 2, Quaternion.identity);
         }
-        
+
         gameObject.SetActive(false);
-    }
-
-    private IEnumerator DamageFlash()
-    {
-        for (int i = 0; i < meshRenderers.Length; i++)
-        {
-            meshRenderers[i].material.color = Color.red;
-        }
-        
-        yield return new WaitForSeconds(0.1f);
-
-        for (int i = 0; i < meshRenderers.Length; i++)
-        {
-            meshRenderers[i].material.color = Color.white;
-        }
     }
 }
