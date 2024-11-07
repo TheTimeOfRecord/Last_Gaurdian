@@ -154,7 +154,7 @@ public class AggressiveMonster : Monster
         for (int i = 0; i < monsterData.dropOnDeath.Length; i++)
         { 
             //아이템 저장하는 변수 이름 가져와서 dropPrefab에 넣기
-            Instantiate(monsterData.dropOnDeath[i], transform.position + Vector3.up * 2, Quaternion.identity);
+            Instantiate(monsterData.dropOnDeath[i], transform.position + Vector3.forward, Quaternion.identity);
         }
 
         gameObject.SetActive(false);
