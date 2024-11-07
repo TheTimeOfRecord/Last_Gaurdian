@@ -12,6 +12,7 @@ public class PhysicsManager : SingleTonBase<PhysicsManager>
         if (physicsConfig != null)
         {
             Debug.Log("PhysicsConfig가 성공적으로 로드되었습니다.");
+
         }
         else
         {
