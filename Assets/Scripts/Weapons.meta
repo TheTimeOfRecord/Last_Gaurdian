@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Items/Consumable.meta
+guid: 1592f529a68417b41938123ea95d4866
+========
 guid: ef56fc4d928144b4e93e8affc4f8af4b
+>>>>>>>> Dev:Assets/Scripts/Weapons.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
