@@ -11,7 +11,7 @@ public class PlayerAnimationManager : MonoBehaviour
         this.animator = animator;
     }
 
-    // ¿Ãµø
+    // Ïù¥Îèô
     public void SetMovementAnimation(Vector2 moveDirection)
     {
         if (animator == null)
@@ -24,19 +24,23 @@ public class PlayerAnimationManager : MonoBehaviour
         animator.SetBool("isRunRight", moveDirection.x > 0);
     }
 
-    // ¡°«¡
+    // Ï†êÌîÑ
     public void TriggerJump()
     {
         animator.SetTrigger("isJump");
     }
 
-    // ∞¯∞›
+    // Í≥µÍ≤©
     public void TriggerAttack()
     {
+        if (animator == null)
+        {
+            return;
+        }
         animator.SetTrigger("isAttack");
     }
 
-    // πÊ∆– µÈ±‚(?)
+    // Î∞©Ìå® Îì§Í∏∞(?)
     public void SetShield(bool isShielding)
     {
         animator.SetBool("isShield", isShielding);

@@ -27,6 +27,11 @@ public class Player : MonoBehaviour
         playerPhysics = GetComponent<PlayerPhysics>();
         playerHeartSensor = GetComponentInChildren<PlayerHeartSensor>();
 
+        animationManager = GetComponent<PlayerAnimationManager>();
+        if (animationManager == null)
+        {
+            animationManager = gameObject.AddComponent<PlayerAnimationManager>();
+        }
     }
     private void Start()
     {
